@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+:root {
+    --primary-green: #3d8f40;
+    --earth-brown: #8d6e63;
+    --accent-orange: #ff9800;
+    --nav-bg: rgba(255, 255, 255, 0.98);
+}
+
+/* Navbar Styles */
+.navbar {
+    background: var(--nav-bg);
+    padding: 0.8rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo Container */
+.logo-wrapper {
+    width: 180px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.logo-wrapper:hover {
+    transform: scale(1.02);
+}
+
+.logo-svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Nav Links */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-green);
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.nav-links a:hover {
+    color: var(--primary-green);
+}
+
+/* Cart Button */
+.cart-btn {
+    color: var(--primary-green);
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.cart-count {
+    background: var(--primary-green);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 50%;
+    font-size: 0.8rem;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary-green);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.8rem 1rem;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 250px;
+        background: var(--nav-bg);
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .logo-wrapper {
+        width: 140px;
+    }
+}
+
+/* Logo SVG Styles */
+.plant-pot {
+    fill: #8d6e63;
+}
+
+.plant-stem {
+    fill: var(--primary-green);
+}
+
+.leaf {
+    fill: #5daa3f;
+    transition: fill 0.3s ease;
+}
+
+.leaf:hover {
+    fill: #3d8f40;
+}
+
+.logo-text {
+    font-family: 'Georgia', serif;
+    fill: #5daa3f;
+    font-size: 22px;
+}
+.logo-slogan {
+    font-style: italic;
+    font-display: swap;
+    font-family: 'Noto Sans Devanagari', 'Georgia', sans-serif;
+    fill: #5daa3f;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+   
+}
