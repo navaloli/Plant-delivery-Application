@@ -13,7 +13,7 @@ const Auth = () => {
     confirmPassword: "",
   });
   const [errors, setErrors] = useState({});
-
+ 
   useEffect(() => {
     if (location.state?.mode === "signup") setIsLogin(false);
     else setIsLogin(true);
